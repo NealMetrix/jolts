@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Project: Jovian Sattelite invite</title>
+        <style>
+            /*Trying to get this to import this project into GitLab but I need to figure out what an XML Manifest is.
+            https://docs.microsoft.com/en-us/visualstudio/deployment/how-to-create-a-package-manifest?view=vs-2019
+            This link seems to have a tutorial on the subject but I might need to download something before I can follow
+            this tutorial. It says that to deploy prerequisites to your VisualStudio Code you need a Boostrapper package.
+            What is a boostrapper package*/
+           body{
+               background-color:rgb(0,0,0);
+               font-size: .93em;
+               margin-bottom:32%;
+           }
+           #lettTitle{
+               font-family: cambria;
+               text-align: center;
+               padding:10px;
+               margin-bottom:-10px;
+               background-color:rgb(255,255,255);
+               border: 5px solid rgb(75, 75, 75);
+               z-index:1;
+           }
+           #select_crew{
+               text-align:center;
+               color:rgb(0,0,255);
+               font-family: Cambria-Math;
+               z-index:1;
+           }
+           #congrats{
+               margin-right:16em;
+               padding-bottom:1px;
+               background-color:rgb(255,255,255);
+               padding-left:10px;
+               padding-right:10px;
+               border: 5px solid rgb(75, 75, 75);
+               z-index:1;
+           }
+           #emph{
+               font-size:2em;
+               font-style:italic;
+           }
+           
+           .gallery{
+               width:141.6%;
+               margin-left:3;
+           }
+           .photo{
+               height:6em;
+               margin-right:1%;
+               position:relative;
+           }
+           #Good_Scroll{
+               bottom:10px;
+               position:relative;
+               right:-3%;
+               
+               height:8em;
+               width: 93.5%;
+               overflow:auto;
+           }
+           #GalleryFrame{
+               background-color:rgb(50,50,50);
+               position:fixed;
+               padding-top:5%;
+               width:95%;
+               bottom:20px;
+               z-index:4;
+           }
+           #jovLun{
+               position:absolute;
+               width:14em;
+               top:9em;
+               right:10px;
+               z-index:1;
+           }
+           #Crew{
+               position:absolute;
+               background-color:rgb(255,255,255);
+               top:17.7em;
+               width:14em;
+               padding:1%;
+               right:10px;
+               border: 5px solid rgb(75, 75, 75);
+               z-index:1;
+           }
+           #crewH{
+               font-weight:bold;
+           }
+        </style>
+    </head>
+    
+    <!--HTML Body start-->
+    <body>
+        <!--Start of Galllery-->
+        <div ID = "GalleryFrame">
+        <div ID="Good_Scroll">
+        <div class = "gallery"><img src = "https://upload.wikimedia.org/wikipedia/commons/b/b7/Celestia_Europe_Io_Jupiter.jpg" class = "photo">
+        <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nautilus-X_ISS_demo_1.png/220px-Nautilus-X_ISS_demo_1.png" class = "photo">
+            
+        <img src = "https://upload.wikimedia.org/wikipedia/commons/7/7b/Io_highest_resolution_true_color.jpg" class = "photo">
+        
+        <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Jupiter_magnetosphere_schematic.jpg/1024px-Jupiter_magnetosphere_schematic.jpg" class = "photo">
+        
+        <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/EuropaInterior1.jpg/220px-EuropaInterior1.jpg" class = "photo">
+        
+        <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Galilean_moon_Laplace_resonance_animation.gif/220px-Galilean_moon_Laplace_resonance_animation.gif" class = "photo">
+        </div></div></div>
+        
+        
+        <h1 id = "lettTitle">Jovian Open Lunar Trade Settlement
+        </h1>
+        <h1 ID = "select_crew">Crew | Selection</h1>
+        
+        <!--Letter of Congratulations-->
+        <!--<div class = "main">-->
+        <div id = "congrats">
+        <p><strong><em><span ID = "emph">
+        C</span></em>ongratulations</strong> you have passed
+        the final astronaut selection proceducers and have been 
+        chosen as a crew member for the JOLT-3 mission. A mission
+        designed to set up outposts on the Jovian moons for future
+        resource extraction.<br>
+        
+        <br>Your launch is scheduled for <strong>August 10, 2056
+        </strong>. The following months will befull of extensive
+        training. Declination of this position will result in
+        elimination from the astronaut training program and
+        assigning another qualified individual to replace you. I
+        must also remind you that the earlier resignation from
+        your position the better off for the rest of the team who
+        will be carrying out this operation.<br>
+        
+        <br>Please read through all of the information in this 
+        Confirmation as thouroughly and precisely as possible to 
+        ensure that you have not missed any information.<br>
+        
+        <br>We thank you for your service as the Astronauts of the
+        Jovian system. You have our sincerest trust that you will
+        accomplish the mission.<br>
+        
+        <br>If you have any questions contact the <a href ="https://www.nasa.gov/">NASA@missioncontrol</a>
+        </p></div>
+        
+        <img ID = "jovLun" src ="https://upload.wikimedia.org/wikipedia/commons/8/8a/Jupiter_family.jpg">
+        
+        <div ID = "Crew">
+        <p ID = "crewH">Meet Your Crew:</p>
+        
+        <ul>
+            <li>John Lincoln: Mechanic & Engineer</li>
+            <br>
+            <li>Sarah Schultz: Biologist</li>
+            <br>
+            <li>Heather GreenMan: Botanist</li>
+            <br>
+            <li>Grant Goldman: Geologist</li>
+            <br>
+            <li>Hannah Rick: Material Scientist</li>
+            <br>
+            <li>Marley Hugh: Physicist</li>
+            <br>
+            <li>Jacobs Mathis: Chemist</li>
+            <br>
+            <li>Theo Featherman: Captain & Aeronautics Specialist
+            </li>
+        </ul>
+        </div>
+    
+    </body>
+</html>
