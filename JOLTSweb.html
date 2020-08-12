@@ -1,173 +1,219 @@
 <!DOCTYPE html>
-<html>
+<html lang = "en">
     <head>
         <meta charset="utf-8">
-        <title>Project: Jovian Sattelite invite</title>
+        <title>Mission JOLTS</title>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
         <style>
-            /*Trying to get this to import this project into GitLab but I need to figure out what an XML Manifest is.
-            https://docs.microsoft.com/en-us/visualstudio/deployment/how-to-create-a-package-manifest?view=vs-2019
-            This link seems to have a tutorial on the subject but I might need to download something before I can follow
-            this tutorial. It says that to deploy prerequisites to your VisualStudio Code you need a Boostrapper package.
-            What is a boostrapper package*/
-           body{
-               background-color:rgb(0,0,0);
-               font-size: .93em;
-               margin-bottom:32%;
-           }
-           #lettTitle{
-               font-family: cambria;
-               text-align: center;
-               padding:10px;
-               margin-bottom:-10px;
-               background-color:rgb(255,255,255);
-               border: 5px solid rgb(75, 75, 75);
-               z-index:1;
-           }
-           #select_crew{
-               text-align:center;
-               color:rgb(0,0,255);
-               font-family: Cambria-Math;
-               z-index:1;
-           }
-           #congrats{
-               margin-right:16em;
-               padding-bottom:1px;
-               background-color:rgb(255,255,255);
-               padding-left:10px;
-               padding-right:10px;
-               border: 5px solid rgb(75, 75, 75);
-               z-index:1;
-           }
-           #emph{
-               font-size:2em;
-               font-style:italic;
-           }
-           
-           .gallery{
-               width:141.6%;
-               margin-left:3;
-           }
-           .photo{
-               height:6em;
-               margin-right:1%;
-               position:relative;
-           }
-           #Good_Scroll{
-               bottom:10px;
-               position:relative;
-               right:-3%;
-               
-               height:8em;
-               width: 93.5%;
-               overflow:auto;
-           }
-           #GalleryFrame{
-               background-color:rgb(50,50,50);
-               position:fixed;
-               padding-top:5%;
-               width:95%;
-               bottom:20px;
-               z-index:4;
-           }
-           #jovLun{
-               position:absolute;
-               width:14em;
-               top:9em;
-               right:10px;
-               z-index:1;
-           }
-           #Crew{
-               position:absolute;
-               background-color:rgb(255,255,255);
-               top:17.7em;
-               width:14em;
-               padding:1%;
-               right:10px;
-               border: 5px solid rgb(75, 75, 75);
-               z-index:1;
-           }
-           #crewH{
-               font-weight:bold;
-           }
+            body{
+                background-color: rgb(10,10,30);
+                margin-bottom:730px;
+                margin-left:-10px
+            }
+            h1{
+                font-weight:normal;
+            }
+            .frame{
+                background-color: rgba(30, 30, 60, 0.9);
+                position: fixed;
+                width: 95%;/*right margin is controlled by width*/
+                overflow-x: scroll;
+                margin-left: 50px;/*Left Margin Controls left margin*/
+                bottom:10px;
+                z-index: 2;
+            }
+            .frame:hover{
+                background-color: rgba(40, 40, 100, 0.9);
+            }
+            .gallery{
+                width:1745px;
+                height:165px;
+            }
+            .gallery img{
+                height: 150px;
+                padding:5px;
+                opacity: .9;
+            }
+            .title{
+                font-family: 'IBM Plex Mono', monospace;
+                color:rgb(255,255,255);
+                background-color: rgb(60,60,60);
+                width: 99%;
+                padding-left:20px;
+                border-top: 4px solid rgb(100,100,100);
+                border-bottom: 4px solid rgb(100,100,100);
+                font-family: 'IBM Plex Mono', monospace;
+            }
+            .textsegment h1{
+                font-family: 'IBM Plex Mono', monospace;
+                border-bottom: 2px solid black;
+                padding-bottom: 20px;
+                padding-left:10px;
+            }
+            .textsegment{/*If you need tips on color schemes go off of star citizen, No Mans Sky, Tony Starks holograms, Quantic Dream website, and Space Engine Website and UI*/
+                background-color:rgb(40,40,60);
+                color:white;
+                width: 30%;
+                margin-top:10px;
+                padding-left: 20px;
+                padding-right:15px;
+                padding-top:5px;
+                padding-bottom:5px;
+                font-family: monospace;
+                border:5px double rgb(50,75,255);
+            }
+            .textsegment p{
+                font-size: 15px;
+            }
+
+            .start_letter{
+                font-size:30px;
+                font-weight: lighter;
+            }
+            p{
+                text-indent: 20px;
+            }
+            .destination{
+                position: absolute;
+                width: 30%;
+                top: 200px;
+                right:10px;
+                background-color: rgb(40,40,40);
+                border: 5px double rgb(50,75,255);
+                padding: 10px;
+                color:white;
+                font-family: monospace;
+                z-index: 1;
+            }
+
+            .destination img{
+                width: 100%;
+            }
+            .destination li{
+                margin-top:20px;
+            }
+            .profile div{
+                position: absolute;
+                width:30%;
+                top:780px;
+                right:10px;
+            }
+            .profile div img{
+                width: 75%;
+            }
+            .probeImg{
+                position:relative;
+                float:right;
+            }
         </style>
     </head>
     
     <!--HTML Body start-->
     <body>
         <!--Start of Galllery-->
-        <div ID = "GalleryFrame">
-        <div ID="Good_Scroll">
-        <div class = "gallery"><img src = "https://upload.wikimedia.org/wikipedia/commons/b/b7/Celestia_Europe_Io_Jupiter.jpg" class = "photo">
-        <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nautilus-X_ISS_demo_1.png/220px-Nautilus-X_ISS_demo_1.png" class = "photo">
+        <div class = "frame">
+        <div class = "gallery">
+            <img src = "https://www.thehindu.com/children/z8lrcq/article25931952.ece/alternates/FREE_435/13istbJupiterandthefourGalileanmoonsartisticjpg"
+            alt = "The 4 galilean moons. Callisto, Ganymede, Europa, IO in front of Jupiter">
             
-        <img src = "https://upload.wikimedia.org/wikipedia/commons/7/7b/Io_highest_resolution_true_color.jpg" class = "photo">
-        
-        <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Jupiter_magnetosphere_schematic.jpg/1024px-Jupiter_magnetosphere_schematic.jpg" class = "photo">
-        
-        <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/EuropaInterior1.jpg/220px-EuropaInterior1.jpg" class = "photo">
-        
-        <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Galilean_moon_Laplace_resonance_animation.gif/220px-Galilean_moon_Laplace_resonance_animation.gif" class = "photo">
-        </div></div></div>
-        
-        
-        <h1 id = "lettTitle">Jovian Open Lunar Trade Settlement
-        </h1>
-        <h1 ID = "select_crew">Crew | Selection</h1>
-        
-        <!--Letter of Congratulations-->
-        <!--<div class = "main">-->
-        <div id = "congrats">
-        <p><strong><em><span ID = "emph">
-        C</span></em>ongratulations</strong> you have passed
-        the final astronaut selection proceducers and have been 
-        chosen as a crew member for the JOLT-3 mission. A mission
-        designed to set up outposts on the Jovian moons for future
-        resource extraction.<br>
-        
-        <br>Your launch is scheduled for <strong>August 10, 2056
-        </strong>. The following months will befull of extensive
-        training. Declination of this position will result in
-        elimination from the astronaut training program and
-        assigning another qualified individual to replace you. I
-        must also remind you that the earlier resignation from
-        your position the better off for the rest of the team who
-        will be carrying out this operation.<br>
-        
-        <br>Please read through all of the information in this 
-        Confirmation as thouroughly and precisely as possible to 
-        ensure that you have not missed any information.<br>
-        
-        <br>We thank you for your service as the Astronauts of the
-        Jovian system. You have our sincerest trust that you will
-        accomplish the mission.<br>
-        
-        <br>If you have any questions contact the <a href ="https://www.nasa.gov/">NASA@missioncontrol</a>
-        </p></div>
-        
-        <img ID = "jovLun" src ="https://upload.wikimedia.org/wikipedia/commons/8/8a/Jupiter_family.jpg">
-        
-        <div ID = "Crew">
-        <p ID = "crewH">Meet Your Crew:</p>
-        
-        <ul>
-            <li>John Lincoln: Mechanic & Engineer</li>
-            <br>
-            <li>Sarah Schultz: Biologist</li>
-            <br>
-            <li>Heather GreenMan: Botanist</li>
-            <br>
-            <li>Grant Goldman: Geologist</li>
-            <br>
-            <li>Hannah Rick: Material Scientist</li>
-            <br>
-            <li>Marley Hugh: Physicist</li>
-            <br>
-            <li>Jacobs Mathis: Chemist</li>
-            <br>
-            <li>Theo Featherman: Captain & Aeronautics Specialist
-            </li>
-        </ul>
+            <img src = "https://i.stack.imgur.com/dfVrC.gif" 
+            alt = "An orbital diagrams of 3 out of 4 Jupiter's  major moons ( Ganymede, Europa, IO) orbiting Jupiter
+            with the numbers that correspond to orbital resonance ratios(4:1 Ganymede, 2:1 Europa, 1:1 IO)">
+
+            <img src = "https://media.wired.com/photos/5dd3fd5aa2b7170008c48e5e/191:100/w_1280,c_limit/Sci-Europa-RTS1RFWK.jpg"
+            alt = "Jupiters moon europa">
+
+            <img src = "https://upload.wikimedia.org/wikipedia/commons/a/ae/Nautilus-X_Main_Dimensions.png"
+            alt = "A picture of a non aerodynamic spacecraft for long duration space missions.
+            Has many storage tanks off the sides and a ring for aritficial gravity">
+
+            <img src = "https://i0.wp.com/planetdestiny.com/wp-content/uploads/2014/11/Europa-moon-destiny.jpg"
+            alt = "Many buildings (about 20 stories high) on Europa's surface completely frozen in ice.">
+
+            <img src = "http://www.bisbos.com/images_probes/europa_drill_1024.jpg"
+            alt = "A giant thermal drill drilling into Europa's ice with Jupiter and IO(Jupiter's closest moon in the background)">
+
+            <img src = "http://i.dailymail.co.uk/i/pix/2014/05/05/article-2620556-1D95EA0700000578-575_634x503.jpg" alt = "a probe under the ice sheets of Europa looking at hydrothermal vents with microbial mats on vents.">
         </div>
-    
+        </div>
+
+        <!--Mission OverView-->
+        <div class = "title">
+            <h1>Jovian Open Lunar Trade Settlement</h1>
+            <h1>Mission: JOLT-3</h1>
+        </div>
+
+        <div class = "textsegment">
+            <h2>Mission OverView:</h2>
+            <p><em class = "start_letter">C</em>ongratulations! As one of the top candidates during training you have been selected as
+                the Captain of the Hercales deep space vessal to complete the JOLT-3 mission. We expect that you will read through the
+                mission briefing carefully and join us for further planning at PlanEX launch facility at 06:00 for further training and planning.
+                We cannot stress that the training you will be subjected to is incredibly dangerous, but if there was any doubt you couldn't
+                complete the tasks at hand you would not have been selected for the mission. Very few are qualified the following
+                for this mission profile so we expect you to know the vital role you play as part of the Hercales crew. Keep this in mind 
+                as you read through this overview.
+            </p>
+            <p>As you are well aware, PlanEX Inc has been interested in the Jovian system for a long time but until now
+                the fuel and energy requirements demanded for the mission have been too great for such a high mass. It has only been thanks to a breakthrough in
+                ion-drive technology that allows a manned mission to Jupiter to be more pheasible. The opportunity of having a Jovian settlement
+                so early is too great of an opportunity to let pass by. 
+            </p>
+            <p>Resource extraction is the primary objective of the settlement we hope to establish. Current analysis suggests that 
+                IO has been increasing in density for several millenia, thus increasing the probability of finding high quantities of
+                heavy metals at the surface and Callisto, Europa, and Ganymede have near unlimited quantities of water ice extractable
+                for habititation or rocket fuel. All moons of the Jovian system have a lesser surface gravity than that of moon
+                making surface to orbit transport. We can also reasonably conclude that the number of gravitational assists from probes
+                will continue to increase giving us a consistant revenue stream.
+            </p>
+            <p>Your mission (JoLT-3) is to set up a habitation and resupply station on Europa for future Jovian missions. It is imperitive
+                that we have access to substantial amounts of water for the IO colony for both habitation and radiation shielding from Jupiter's magnetosphere.
+                Europa has been chosen for both it's proximity and it's wide array of H<sub>2</sub>O states being relatively close to the surface. 
+            </p>
+            <p>As Captain and Astronautic specialist it is your job to know every system and every component on the ship. All crew members will be trained
+                for a wide variety of hazards and emergency situations. As captain it is your job to know all vehichle and equipment with uncanny precision.
+                This includes both hardware and software. Hercales will be your home for nearly 2 years and any malfunction or component failure
+                could have unforseen consequences, including but not limited too the loss of life of the entire crew.
+            </p>
+            <!--SpaceCraft Idea for the future. A Hypersonic spaceplane that comes down from orbit to Jupiter and grabs compressed hydrogen from the Jovian atmosphere.-->
+        </div>
+        <div class = "destination">
+            <img src = "https://d1o50x50snmhul.cloudfront.net/wp-content/uploads/2016/11/14142234/europa-1920.jpg" alt = "Jupiters moon europa. Europa has white ice sheet reds and browns marking cracks in the moons ice.">
+            <p>Why Start With Europa</p>
+            <ul>
+                <li>In close proximity to IO</li>
+                <li>Has exotic forms of H<sub>2</sub>O close to the surface</li>
+                <li>Ice content requires less refining than Callisto and Ganymede</li>
+                <li>Shallow spots may allow us to pump subsurface ocean directly to the surface</li>
+            </ul>
+        </div>
+        <div class = "profile">
+        <div class = "textsegment">
+            <h2>Mission Profile:</h2>
+            <h3>History</h3>
+            <p>In 2035 there was a breakthrough in ion propulsion techniques that allowed us to get to the Martian colonies in under a
+                month. We deployed it on one of our Chariot craft unmanned for testing and it went unexpectedly smoothly and after we started an assembly line
+                of our Chariot craft with a couple more optimizations that were soon called the Pegasus lineup. After this we started seeing if we could create
+                a larger engine series purposed for a much more massive ship. It was long until our physics department determined that it would be able deliver a
+                habitation transport grade freighter to Jupiter in under 2 years. It was then that project JOLT was born.</p>
+
+                <p>JOLT-1 was launched in 2040 and was a reconiscense craft meant to determine the pheasablity of a manned Jovian mission.
+                It was meant to answer a whole host of unanswered questions such as... What resources are easily accesible on the Jovian moons?
+                How deep are the ice shells of the galilean moons? How much radiation protection is needed from Jupiter's magnetosphere?
+                Are there any other hazards on the Jovian enviornment? IO proved to be rich of high value minerals on it's surface and Europa
+                had a couple of icesheets that were thinner than 500 meters. There was also research conducted on Ganymede's magnetosphere
+                to see how it interacted with the Jovian magnetosphere. The Midas probe is still orbiting Jupiter updating our knowledge on the
+                characteristics of these satelites.</p>
+
+                <p>Soon after we recieved the data of how shallow some ice sheets were on Europa's surface we started designing JOLT-2.
+                    JOLT-2 is currently laying the groundworks for you and the crew as we speak. It did another radiation test on it's way there and
+                    has inspired the design of the Hercales radiation shield. It has delivered cargo and supplies for you in preparation for your arrival.
+                    A habitat is currently being constructed by Ice-ThreeD. Your habitat will be created long before your arrival.</p>
+                    <img src = "http://i.dailymail.co.uk/i/pix/2014/05/05/article-2620556-1D95EA0700000578-575_634x503.jpg" alt = "a probe under the ice sheets of Europa looking at hydrothermal vents with microbial mats on vents." class = "probeImg">
+                    <!--The plan right now is that it was not this mission that discovered IO's increasing density
+            Maybe it confirmed it though. A more science focused agency such as NASA or the Planetary society or someone else
+            found this out.-->
+            <!--ICE ThreeD is a 3D printer for Europa's ice sheet. Melting ice and turning it into a habitat.-->
+            <!--What do I want to change about this before I commit and push it to my gitHub repository.-->
+        </div></div>
     </body>
 </html>
